@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="./assets/imagens/Logos/logoRPGManager.png">
+    <link rel="Stylesheet" href="./assets/Style.css">
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
+                aria-expanded="false"><span id="hamburger"></span>
+            </button>
+            <ul id="menu">
+                <li><a class="itens-menu" href="Home.html"> Home</a></li>
+                <li><a class="itens-menu" href="QuemSomosNos.html"> Quem somos?</a></li>
+                <li><a class="itens-menu" href="NosApoie.html"> Nos apóie!</a></li>
+                <li> <a class="itens-menu" href="Cadastro.html"> Cadastre-se</a></li>
+                <li><a class="itens-menu" href="Login.html"> Login</a></li>
+            </ul>
+            <img src="./assets/imagens/Logos/logoRPGManager.png" width=60 height=50
+                alt="logo do site, uma bandeira com uma lança e uma espada formando uma cruz" class="logo-menu" />
+        </nav>
+    </header>
+    <main>
+        <div class="titulo-da-pagina">
+            <img src="./assets/imagens/Logos/logoRPGManager.png" width=100 height=80 />
+            <h1>Cadastre-se</h1>
+            <img src="./assets/imagens/Logos/logoRPGManager.png" width=100 height=80 />
+        </div>
+        <form id="form1">
+            <h2>Fase 1: Seus dados (O mestre)</h2>
+            <fieldset class="content-1">
+                <div class="form1-linha1">
+                    <label for="primeironome">Nome:</label>
+
+                        <div class="validacao-nome">
+                            <input id="primeironome" type="text" name="nome" placeholder="Nome" class="input"
+                            oninput="nameValidate()" required /> 
+                            <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                        </div>
+                </div>
+
+                <div class="form1-linha2">
+                    <label for="primeiroemail">E-mail:</label>
+                    <div class="validacao-email">
+                        <input id="primeiroemail" type="email" email="email" placeholder="seuemail@email.com" class="input"
+                       oninput="emailValidate()" required />
+                        <span class="span-required">Digite um e-mail válido</span>
+                    </div>
+                    
+                </div>
+            </fieldset>
+            <br />
+            <fieldset class="content-2">
+                <label for="senha">Senha:</label>
+              
+                <div class="validacao-senha">
+                    <input id="senha" type="password" password="password" placeholder="Senha" class="input" oninput="mainPasswordValidate()" required />
+                    <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
+                </div>
+                <label>Confirmação da senha:</label>
+                <div class="confimarcao-senha">
+                    <input type="password" confirmation="CP" placeholder="Confirmação de senha" class="input" oninput="comparePassword()" required />
+                    <span class="span-required">Senhas devem ser compatíveis</span>
+                </div>
+               
+               
+            </fieldset>
+        </form>
+        <br />
+        <form id="form2">
+            <h2>Fase 2: Sua equipe (Os jogadores)</h2>
+           <div class="adicionarmembro">
+            <button id="add-form2">+</button>
+            <label>Adicionar membro</label>
+           </div>
+           <br/>
+            <fieldset class="content-3">
+                <label>Player 1: </label>
+                <input type="text" name="nome" placeholder="Nome e Sobrenome" class="input" /> <br />
+                <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                <label> E-mail:</label>
+                <input type="email" email="email" placeholder="seuemail@email.com" class="input" /> <br />
+                <span class="span-required">Digite um e-mail válido</span>
+            </fieldset>
+            <br />
+            <fieldset class="content-4">
+                <label> Player 2: </label>
+                <input type="text" name="nome" placeholder="Nome e Sobrenome" class="input" /> <br />
+                <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                <label> E-mail:</label>
+                <input type="email" email="email" placeholder="seuemail@email.com" class="input" /> <br />
+                <span class="span-required">Digite um e-mail válido</span>
+            </fieldset>
+            <br />
+            <fieldset class="content-5">
+                <label>Player 3:</label>
+                <input type="text" name="nome" placeholder="Nome e Sobrenome" class="input" /> <br />
+                <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                <label>E-mail:</label>
+                <input type="email" email="email" placeholder="seuemail@email.com" class="input" /> <br />
+                <span class="span-required">Digite um e-mail válido</span>
+            </fieldset>
+        </form>
+        <br />
+        <form id="form3">
+            <h2>Fase 3: Seu RPG (O jogo)</h2>
+            <div class="content-6">
+                <div class="form3-linha1">
+                    <label>Nome:</label>
+                    <input type="text" name="nome" placeholder="Nome" class="input" /> <br />
+                </div>
+                <br />
+                <div class="form3-linha2">
+                    <label>Tipo:</label>
+                    <input type="text" tipo="tipo" placeholder="Tipo" class="input" /> <br />
+                </div>
+                <br />
+                <div class="form3-linha3">
+                    <label for="his">História:</label>
+                    <textarea name="historia" id="historia" cols="50" rows="7"
+                        placeholder="Descreva a história do personagem..." class="input"></textarea><br />
+                </div>
+            </div>
+        </form>
+        <br />
+        <form id="form4">
+            <h2>Fase 4: Seus Personagens (Os Heróis/Vilões)</h2>
+           <div class="adicionarpersonagem">
+            <button id="add-form4">+</button> <br />
+            <label>Adicionar personagens</label>
+           </div>
+           <br/>
+            <fieldset class="content-7">
+                <div class="form4-linha1">
+                    <label for="h"> Herói:</label>
+                    <input type="radio" id="h" name="tipo" value="Heroi" />
+                </div>
+
+                <div class="form4-linha2">
+                    <label for="v"> Vilão:</label>
+                    <input type="radio" id="v" name="tipo" value="Vilao" />
+                </div>
+
+            </fieldset>
+            <br />
+            <fieldset class="content-8">
+
+                <div class="form4-linha3">
+                    <label for="personagem">Personagem 1:</label>
+                    <input type="text" name="nome" placeholder="Nome do personagem " id="personagem" class="input" />
+                    <br />
+                </div>
+                <br />
+                <div class="form4-linha4">
+                    <label for="classe">Classe:</label>
+                    <input type="text" tipo="tipo" placeholder="Classe do personagem" id="classe" class="input" />
+                    <br />
+                </div>
+                <br />
+                <div class="form4-linha5">
+                    <label>História:</label>
+                    <textarea name="descricao" id="descricao" cols="50" rows="7"
+                        placeholder="Descreva a história do personagem..." class="input"></textarea><br />
+                </div>
+                <br />
+                <div class="form4-linha6">
+                    <label>Atributos:</label>
+                    <textarea name="atributos" id="atributos" cols="50" rows="5"
+                        placeholder="Descreva os atributos do personagem..." class="input"></textarea><br />
+                </div>
+            </fieldset>
+        </form>
+        <br />
+        <form id="form5">
+            <h2>Fase 5: Cenário (Onde os jogos acontecem)</h2><br />
+           <div class="adicionarcenario">
+            <button type="button" id="add-form5" class="button-form5">+</button> <br />
+            <label>Adicionar cenário</label>
+           </div>
+           <br/>
+            <fieldset class="content-9">
+
+                <div class="form5-linha1">
+                    <label for="nome-cenario">Nome:</label>
+                    <input type="text" name="nome" placeholder="Nome" id="nome-cenario" class="input" /> <br />
+                </div>
+                <br/>
+
+                <div class="form5-linha2">
+                    <label for="tipo-cenario">Tipo:</label>
+                    <input type="text" tipo="tipo" placeholder="Tipo" id="tipo-cenario" class="input" /> <br />
+                </div>
+                <br/>
+                <div class="form5-linha3">
+                    <label for="descricao-cenario">Descrição:</label>
+                    <textarea name="cenario" id="cenario" cols="50" rows="5" placeholder="Descreva o cenário do jogo..."
+                        itemid="descricao-cenario" class="input"></textarea><br />
+                </div>
+                <br/>
+                <div id="box5" class="box5">
+
+                </div>
+
+            </fieldset>
+        </form>
+
+        <fieldset class="checkbox">
+            <div class="termo">
+                <input type="checkbox" name="termo" class="checkbox-notificacoes" />
+                <label>Aceito os termos e as condições <a href="TermoEcondicoes.html">(Clique aqui para
+                        acesssar)</a></label>
+            </div>
+            <div class="notificacoes">
+                <input type="checkbox" name="termo" class="checkbox-notificacoes" />
+                <label>Aceito receber notificações e novidades por e-mail</label>
+            </div>
+        </fieldset>
+        <button class="button-finalizar" style="width:200px; height:30px;" type="submit">Finalizar cadastro</button>
+    </main>
+
+    <footer class="rodape">
+        <div class="copyright">
+            <h5>&copy;2022 - Equipe Front ADS UCSAL</h5>
+            <h6>Zaga da Servia</h6>
+        </div>
+        <div class="redes-sociais">
+            <ul>
+                <li>
+                    <a href="#"><img src="./assets/imagens/Logos/logo-facebook.png" width=50 height=50
+                            alt="link para o facebook" class="logo-menu" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/imagens/Logos/logo-instagram.png" width=50 height=50
+                            alt="link para o facebook" class="logo-menu" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/imagens/Logos/logo-youtube.png" width=50 height=50
+                            alt="link para o facebook" class="logo-menu" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/imagens/Logos/logo-twitch.png" width=50 height=50
+                            alt="link para o facebook" class="logo-menu" /></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="assets/Script.js"></script>
+</body>
+
+</html>
